@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Raise Your Show Lamb 🐑</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #f4f9f4;
+        padding: 40px;
+    }
+
+    h1 {
+        color: #2e7d32;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        width: 300px;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+        padding: 12px 20px;
+        margin: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .feed {
+        background: #4caf50;
+        color: white;
+    }
+
+    .reset {
+        background: #e53935;
+        color: white;
+    }
+
+    .win {
+        color: #ff9800;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>🐑 Raise Your Show Lamb</h1>
+<a href="index.html"><button>Back to Home</button></a>
+
+<div class="card">
+    <p><strong>Weight:</strong> <span id="weight">60</span> lbs</p>
+    <p><strong>Days Fed:</strong> <span id="days">0</span></p>
+    <p><strong>Goal:</strong> 150 lbs</p>
+
+    <button class="feed" onclick="feedLamb()">Feed Lamb 🌾</button>
+    <button class="reset" onclick="resetGame()">Reset</button>
+
+    <p id="message"></p>
+</div>
+
+<script>
+let weight = 60;
+let days = 0;
+const goal = 150;
+
+function feedLamb() {
+    if (weight >= goal) return;
+
+    let gain = Math.floor(Math.random() * 5) + 1; // random gain 1–5 lbs
+    weight += gain;
+    days++;
+
+    document.getElementById("weight").textContent = weight;
+    document.getElementById("days").textContent = days;
+
+    if (weight >= goal) {
+        document.getElementById("message").innerHTML =
+            "🎉 Your lamb is ready for the show! Great work!";
+        document.getElementById("message").classList.add("win");
+    }
+}
+
+function resetGame() {
+    weight = 60;
+    days = 0;
+
+    document.getElementById("weight").textContent = weight;
+    document.getElementById("days").textContent = days;
+    document.getElementById("message").textContent = "";
+    document.getElementById("message").classList.remove("win");
+}
+</script>
+
+</body>
+</html>

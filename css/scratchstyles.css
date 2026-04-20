@@ -1,0 +1,63 @@
+body {
+    background-color: lightblue;   /* custom background */
+    font-family: Arial, sans-serif; /* font family */
+    color: black;                  /* font color */
+    text-align: center;
+}
+
+.nav {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.box {
+    background-color: white;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid gray;
+}
+
+h1 {
+    color: darkblue;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+a {
+    color: blue;
+}
+/* ol, ul {
+    display: inline-block;
+    text-align: left;
+} */
+
+ol, ul {
+  text-align: center;
+  list-style-position: inside;
+}
+
+
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+    color: black;
+    text-align: center; /* centers the box, not the text inside it */
+}
+
+.box {
+    background-color: white;
+    margin: 15px auto;
+    padding: 15px;
+    border: 1px solid gray;
+}
+
+ol, ul {
+    text-align: left;        /* text inside list is left-aligned */
+    list-style-position: outside; /* normal bullet/number position */
+    padding-left: 1.2rem;    /* ensures bullets aren’t on the far left edge */
+}
+
+
